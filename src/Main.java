@@ -1,28 +1,19 @@
-
 public class Main {
     public static void main(String[] args) {
-        Boss boss = new Boss();
-        boss.setHealth(1000);
-        boss.setDamage(100);
-        boss.setDefenceType("Magic");
+        Weapon bossWeapon = new Weapon(WeaponType.MAGIC, "Dark Staff");
+        Boss boss = new Boss(500, 80, bossWeapon);
+        boss.printInfo();
 
-        System.out.println("Boss Info:");
-        System.out.println("Health: " + boss.getHealth());
-        System.out.println("Damage: " + boss.getDamage());
-        System.out.println("Defence Type: " + boss.getDefenceType());
+        System.out.println("\nSkeletons:");
 
-        Hero[] heroes = createHeroes();
-        System.out.println("\nHeroes Info:");
-        for (Hero hero : heroes) {
-            System.out.println("Health: " + hero.getHealth() + ", Damage: " + hero.getDamage() + ", Ability: " + hero.getSuperAbility());
-        }
-    }
+        Weapon skelWeapon1 = new Weapon(WeaponType.BOW, "Bone Bow");
+        Skeleton skeleton1 = new Skeleton(150, 30, skelWeapon1, 10);
+        skeleton1.printInfo();
 
-    public static Hero[] createHeroes() {
-        Hero hero1 = new Hero(250, 20, "Fireball");
-        Hero hero2 = new Hero(300, 15);
-        Hero hero3 = new Hero(280, 25, "Heal");
+        System.out.println();
 
-        return new Hero[]{hero1, hero2, hero3};
+        Weapon skelWeapon2 = new Weapon(WeaponType.BOW, "Shadow Bow");
+        Skeleton skeleton2 = new Skeleton(180, 35, skelWeapon2, 15);
+        skeleton2.printInfo();
     }
 }
