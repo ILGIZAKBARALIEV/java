@@ -1,30 +1,19 @@
+public abstract class Hero extends GameEntity implements HavingSuperAbility {
+    private String superAbilityType;
 
-public class Hero {
-    private int health;
-    private int damage;
-    private String superAbility;
 
-    public Hero(int health, int damage, String superAbility) {
-        this.health = health;
-        this.damage = damage;
-        this.superAbility = superAbility;
+    public Hero(int health, int damage, String superAbilityType) {
+        super(health, damage);
+        this.superAbilityType = superAbilityType;
     }
 
-    public Hero(int health, int damage) {
-        this.health = health;
-        this.damage = damage;
-        this.superAbility = "None";
+
+    public String getSuperAbilityType() {
+        return superAbilityType;
     }
 
-    public int getHealth() {
-        return health;
-    }
 
-    public int getDamage() {
-        return damage;
-    }
-
-    public String getSuperAbility() {
-        return superAbility;
+    public void setSuperAbilityType(String superAbilityType) {
+        this.superAbilityType = superAbilityType;
     }
 }
